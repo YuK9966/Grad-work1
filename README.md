@@ -95,3 +95,6 @@
 
 ### 画面遷移図
 Figma：https://www.figma.com/design/zAxisBP2UEIPrWZYNCEcOn/%E7%84%A1%E9%A1%8C?node-id=0-1&t=OYfsN3FMJ8J0BGOa-1
+
+### ER図
+drawio：https://drive.google.com/file/d/1lHGSdnYXgUg6sS-uOGCZ-rus9sk6SK3s/view?usp=sharing
