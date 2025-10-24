@@ -76,8 +76,13 @@
 - ユーザー登録
 - ログイン
 - プロフィール管理（年齢、セルフネイル暦、好きなデザイン傾向など）
-- 手持ちのジェルネイル管理機能（追加・編集）
-- 投稿機能
+- ネイルメモ閲覧機能（未ログインでも閲覧可能）
+- ネイルメモ投稿機能
+- ネイルメモ編集機能
+- ネイルメモ削除機能
+- ネイルアイテム新規登録機能
+- ネイルアイテムリスト追加機能
+- リスト内ネイルアイテム削除機能
 - ネイルカラー提案機能
 
 ### 追加予定機能
@@ -95,3 +100,6 @@
 
 ### 画面遷移図
 Figma：https://www.figma.com/design/zAxisBP2UEIPrWZYNCEcOn/%E7%84%A1%E9%A1%8C?node-id=0-1&t=OYfsN3FMJ8J0BGOa-1
+
+### ER図
+drawio：https://drive.google.com/file/d/1lHGSdnYXgUg6sS-uOGCZ-rus9sk6SK3s/view?usp=sharing
