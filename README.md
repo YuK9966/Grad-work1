@@ -96,9 +96,10 @@
 
 ## 使用する技術スタック
 - デプロイ先：Render
-- データベース：Neon
-- サーバーサイド：Ruby on Rails
+- データベース：Neon（PostgreSQL）
+- サーバーサイド：Ruby on Rails 7
 - フロントエンド：ERB + JavaScript
+- UIツール：Tailwind
 - 外部ストレージ：Cloudinary
 - 使用予定のGem：devise（ユーザー認証）
 
