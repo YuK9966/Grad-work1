@@ -101,7 +101,6 @@
 - フロントエンド：ERB + JavaScript
 - UIツール：Tailwind
 - 外部ストレージ：Cloudinary
-- 使用予定のGem：devise（ユーザー認証）
 
 ### 画面遷移図
 Figma：https://www.figma.com/design/zAxisBP2UEIPrWZYNCEcOn/%E7%84%A1%E9%A1%8C?node-id=0-1&t=OYfsN3FMJ8J0BGOa-1
