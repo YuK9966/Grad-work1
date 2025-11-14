@@ -1,6 +1,5 @@
 module ApplicationHelper
   def flash_class(level)
-      puts "LEVEL = #{level.inspect}"
     case level.to_s
       when "notice"
         "bg-blue-100 border border-blue-300 text-blue-800 px-4 py-2"

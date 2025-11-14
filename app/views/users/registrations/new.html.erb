@@ -1,34 +1,43 @@
 <div class="max-w-sm mx-auto mt-10 mb-10 p-6 bg-[#DFF1F6] rounded-lg shadow-md leading-loose">
-  <h2 class="text-2xl font-bold mb-6 text-center"><%= t('.sign_up') %></h2>
+  <h2 class="text-2xl font-bold mb-6 text-center"><%= t('devise.registrations.new.sign_up') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <!-- ユーザーネーム -->
   <div class="field">
-    <%= f.label :nickname, "ユーザーネーム", class: "inline-block"%><span class="text-red-500">*</span><br />
-    <%= f.text_field :nickname, class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+    <div class="flex items-center gap-1">
+      <%= f.label :nickname, "ユーザーネーム", class: "inline-block"%><span class="text-red-500">*</span><br />
+    </div>
+      <%= f.text_field :nickname, class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
   </div>
   
   <!-- メールアドレス -->
   <div class="field">
-    <%= f.label :email, class: "inline-block" %><span class="text-red-500">*</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+    <div class="flex items-center gap-1">
+      <%= f.label :email, class: "inline-block" %><span class="text-red-500">*</span><br />
+    </div>
+      <%= f.email_field :email, autocomplete: "email", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
   </div>
 
   <!-- パスワード -->
   <div class="field">
-    <%= f.label :password, class: "inline-block" %><span class="text-red-500">*</span>
-    <% if @minimum_password_length %>
-    （<%= @minimum_password_length %>文字以上）
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded"%>
+    <div class="flex items-center gap-1">
+      <%= f.label :password, class: "inline-block" %><span class="text-red-500">*</span>
+      <% if @minimum_password_length %>
+      （<%= @minimum_password_length %>文字以上）
+      <% end %><br />
+    </div>
+      <%= f.password_field :password, autocomplete: "new-password", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded"%>
   </div>
+
 
   <!-- パスワード確認 -->
   <div class="field">
-    <%= f.label :password_confirmation, class: "inline-block" %><span class="text-red-500">*</span><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+    <div class="flex items-center gap-1">
+      <%= f.label :password_confirmation, class: "inline-block" %><span class="text-red-500">*</span><br />
+    </div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
   </div>
 
 <!-- 性別 -->
