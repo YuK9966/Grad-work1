@@ -1,0 +1,58 @@
+<div class="max-w-sm mx-auto mt-10 mb-10 p-6 bg-[#DFF1F6] rounded-lg shadow-md leading-loose">
+  <h2 class="text-2xl font-bold mb-6 text-center">ユーザー登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <!-- ユーザーネーム -->
+    <div class="field">
+      <%= f.label :nickname, "ユーザーネーム", class: "inline-block"%><span class="text-red-500">*</span><br />
+      <%= f.text_field :nickname, class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+    </div>
+
+  <div class="field">
+    <%= f.label :email, "メールアドレス", class: "inline-block" %><span class="text-red-500">*</span><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "パスワード", class: "inline-block" %><span class="text-red-500">*</span>
+    <% if @minimum_password_length %>
+    （<%= @minimum_password_length %>文字以上）
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "パスワード（確認用）", class: "inline-block" %><span class="text-red-500">*</span><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+  </div>
+
+  <!-- 性別 -->
+  <div>
+    <%= f.label :gender, "性別", class: "block" %>
+    <%= f.select :gender, [["女性", "female"], ["男性", "male"], ["その他", "other"]], { prompt: "選択してください" }, class: "mb-3 p-1 border bg-white border-gray-300 rounded" %>
+  </div>
+
+  <!-- 年代 -->
+  <div>
+    <%= f.label :age_group, "年代", class: "block text-xs" %>
+    <%= f.select :age_group, [["10代", "10"], ["20代", "20"], ["30代", "30"], ["40代", "40"], ["50代", "50"], ["60代以上", "60"]], { prompt: "選択してください" }, class: "mb-3 p-1 border bg-white border-gray-300 rounded" %>
+  </div>
+
+  <div class="text-center mt-3 leading-loose">
+    <button class="actions h-8 overflow-hidden rounded bg-[#90D1E0] px-4 font-bold text-white transition-all duration-300 hover:bg-[#90D1E0] hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 text-center">
+      <%= f.submit "ユーザー登録" %>
+    </button>
+  </div>
+
+<!-- ライン -->
+  <hr class="my-6 border-gray-300">
+
+  <!-- ログインリンク -->
+  <p class="text-center text-gray-600">
+    ユーザー登録済みの方はこちらから</br>
+    <%= link_to "ログイン", new_user_session_path, class: "text-blue-500 hover:underline" %>
+  </p>
+</div>
+<% end %>
