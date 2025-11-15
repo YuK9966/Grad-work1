@@ -1,0 +1,21 @@
+<h2 class="text-xl font-bold mb-3 text-center">Nail Log</h2>
+
+<div class="mb-3 text-center">
+  今日のネイルはどんなテーマ？<br>
+  どのジェルを使って、どんなデザインになった？<br>
+  手持ちのネイルアイテムを登録することで、<br>
+  日記よりも手軽、かつ簡潔に、<br>
+  日々のネイルの記録を残せます。<br>
+  ※ユーザー登録が必要です。<br>
+</div>
+
+<div class="text-center mt-3 leading-loose">
+  <button class="actions h-8 overflow-hidden rounded bg-[#90D1E0] px-4 mx-2 text-white transition-all duration-300 hover:bg-[#90D1E0] hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 text-center">
+    <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path %>
+  </button>
+
+  <button class="actions h-8 overflow-hidden rounded bg-[#90D1E0] px-4 mx-2 text-white transition-all duration-300 hover:bg-[#90D1E0] hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 text-center">
+    <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path %>
+  </button>
+</div>
+
