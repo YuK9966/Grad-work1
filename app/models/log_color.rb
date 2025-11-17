@@ -1,0 +1,2 @@
+class LogColor < ApplicationRecord
+end
