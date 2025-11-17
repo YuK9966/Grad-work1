@@ -22,7 +22,7 @@
     <%= render "shared/header" %>
 
     <!-- メインコンテンツ -->
-    <main class="flex-1 pt-14 overflow-auto">
+    <main class="flex-1 pt-14 mb-10 overflow-auto">
         <!-- フラッシュメッセージ -->
           <% flash.each do |level, message| %>
             <div class="<%= flash_class(level) %>  ">

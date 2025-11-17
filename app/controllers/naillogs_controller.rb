@@ -1,0 +1,2 @@
+class NaillogsController < ApplicationController
+end
