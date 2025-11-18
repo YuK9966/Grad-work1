@@ -1,0 +1,2 @@
+class NailItem < ApplicationRecord
+end

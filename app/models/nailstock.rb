@@ -1,0 +1,2 @@
+class Nailstock < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class LogNail < ApplicationRecord
+end
