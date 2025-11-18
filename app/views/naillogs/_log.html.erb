@@ -1,19 +1,18 @@
 <div class="bg-white p-2 m-2 flex justify-between items-start">
 
 <!-- テキスト側要素 -->
-  <div class="flex-1 mr-4">
+  <div class="flex-auto mr-2 ml-2">
     <!-- タイトル -->
-    <h2 class="text-sm font-semibold text-gray-800 mb-1">
+    <h2 class="text-sm font-semibold text-gray-800 mb-1 text-left">
       <%= log.title %>
     </h2>
 
     <!-- ユーザー名 -->
-    <p class="text-gray-600 text-sm text-right">
+    <p class="text-gray-600 text-xs text-right object-bottom">
       <%= log.user.nickname %>
-    </p>
+      <br>
 
     <!-- 投稿日 -->
-    <p class="text-gray-500 text-sm text-right">
       投稿日：<%= log.created_at.strftime("%Y-%m-%d") %>
     </p>
   </div>
