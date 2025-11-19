@@ -96,7 +96,7 @@
 
 ## 使用する技術スタック
 - デプロイ先：Render
-- データベース：Neon（PostgreSQL）
+- データベース：Neon（PostgreSQL 16）
 - サーバーサイド：Ruby on Rails 7
 - フロントエンド：ERB + JavaScript
 - UIツール：Tailwind
