@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "nail_items/new"
   devise_for :users, 
     controllers: {sessions: 'users/sessions', registrations: 'users/registrations'},
     path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'signup'}
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   resources :naillogs
+  resources :nail_items
 
   # Defines the root path route ("/")
   # root "posts#index"
