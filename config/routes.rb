@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   resources :naillogs
-  resources :nail_items
+  resources :nail_items do
+    get :brands_search, on: :collection
+    get :products_search, on: :collection
+    get :prod_colors_search, on: :collection
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"

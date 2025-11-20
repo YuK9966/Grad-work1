@@ -1,0 +1,5 @@
+<% @prod_colors.each do |prod_color| %>
+	<li class="w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded hover:bg-blue-200 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-blue-200 dark:hover:text-gray-300" role="option" data-autocomplete-value="<%= prod_color.id %>" data-autocomplete-label="<%= prod_color.name %>">
+		<%= prod_color.name %>
+	</li>
+<% end %>
