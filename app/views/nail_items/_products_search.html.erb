@@ -1,0 +1,8 @@
+<% @products.each do |product| %>
+	<li class="w-full flex items-center px-2 py-0 hover:bg-gray-100"
+			role="option"
+			data-autocomplete-label="<%= product.id %>"
+			data-autocomplete-value="<%= product.name %>">
+		<%= product.name %>
+	</li>
+<% end %>

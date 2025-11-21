@@ -20,17 +20,17 @@ class NailItemsController < ApplicationController
   
   def brands_search
     @brands = Brand.where("name LIKE ?", "%#{params[:query]}%").order(:name).limit(10)
-    render "brands_search"
+    render partial:"brands_search", layout: false
   end
 
   def products_search
     @products = Product.where("name LIKE ?", "%#{params[:query]}%").order(:name)
-    render "products_search"
+    render partial:"products_search", layout: false
   end
 
   def prod_colors_search
     @prod_colors = ProdColor.where("name LIKE ?", "%#{params[:query]}%").order(:name)
-    render "prod_colors_search"
+    render partial:"prod_colors_search", layout: false
   end
 
   private

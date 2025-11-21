@@ -22,14 +22,16 @@
     <%= render "shared/header" %>
 
     <!-- メインコンテンツ -->
-    <main class="flex-1 pt-14 mb-10 overflow-auto justify-center text-gray-600 sm:px-6 lg:px-0">
-        <!-- フラッシュメッセージ -->
-          <% flash.each do |level, message| %>
-            <div class="<%= flash_class(level) %>  ">
-              <%= message %>
-            </div>
-          <% end %>
-          <%= yield %>
+    <main class="pt-14">
+      <!-- フラッシュメッセージ -->
+        <% flash.each do |level, message| %>
+          <div class="<%= flash_class(level) %>  ">
+            <%= message %>
+          </div>
+        <% end %>
+      <div class="flex-1 mb-10 overflow-auto justify-center text-gray-600 px-6 sm:px-6 lg:px-0">
+        <%= yield %>
+      </div>
     </main>
 
     <!-- フッター -->
