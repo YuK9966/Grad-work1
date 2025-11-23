@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get "nail_items/new"
-  devise_for :users, 
-    controllers: {sessions: 'users/sessions', registrations: 'users/registrations'},
-    path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'signup'}
+  devise_for :users,
+    controllers: { sessions: "users/sessions", registrations: "users/registrations" },
+    path_names: { sign_in: "login", sign_out: "logout", sign_up: "signup" }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

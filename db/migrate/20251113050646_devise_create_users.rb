@@ -3,11 +3,9 @@
 class DeviseCreateUsers < ActiveRecord::Migration[7.2]
   def change
     create_table :users do |t|
-
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
       t.string :nickname,           null: false
       t.integer :age_group          # 年代（例: 20, 30, 40などを整数で）
       t.string :gender              # 'male', 'female', 'other' など文字列でOK
@@ -37,8 +35,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.2]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
-
       t.timestamps null: false
     end
 

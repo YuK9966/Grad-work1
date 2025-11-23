@@ -7,8 +7,8 @@ class CreateNailItems < ActiveRecord::Migration[7.2]
       t.references :colors, foreign_key: true
       t.timestamps
     end
-    add_index :nail_items, [:brand_id, :product_id, :prod_color_id], 
-              unique: true, 
+    add_index :nail_items, [ :brand_id, :product_id, :prod_color_id ],
+              unique: true,
               name: 'index_nail_items_SKU'
   end
 end

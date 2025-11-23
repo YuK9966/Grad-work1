@@ -11,7 +11,7 @@ class NailItem < ApplicationRecord
   validates :product_id, presence: true
   validates :prod_color_id, presence: true
 
-    # 複合ユニークバリデーション
+  # 複合ユニークバリデーション
   validate :unique_combination
 
   def unique_combination
