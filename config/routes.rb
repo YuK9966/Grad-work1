@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "nail_stocks/index"
+  get "nail_stocks/create"
+  get "nail_stocks/destroy"
   get "nail_items/new"
   devise_for :users,
     controllers: { sessions: "users/sessions", registrations: "users/registrations" },
@@ -18,8 +21,11 @@ Rails.application.routes.draw do
     get :brands_search, on: :collection
     get :products_search, on: :collection
     get :prod_colors_search, on: :collection
+    collection do
+      get :nail_stocks # nail_items/nail_stocksへのルーティング(nail_itemsのディレクトリからnail_stocksのアクションを加えることができる)
+    end
   end
-  resource :nail_stocks
+  resources :nail_stocks, only: [:create, :destroy] # nail_stocksのcreate,destroyアクションのみルーティング
 
   # Defines the root path route ("/")
   # root "posts#index"

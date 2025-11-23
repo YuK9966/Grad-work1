@@ -34,7 +34,6 @@ class NailItemsController < ApplicationController
       redirect_to @nail_item, notice: "登録されました"
     else
       flash.now[:alert] = "登録に失敗しました"
-      puts @nail_item.errors.full_messages
       render :new, status: :unprocessable_entity # エラー時にステータスコード422を返す
     end
   end
