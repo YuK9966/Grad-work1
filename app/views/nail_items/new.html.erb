@@ -1,4 +1,13 @@
 <div class="max-w-sm mx-6 mt-6 mb-10 p-6 bg-[#DFF1F6] rounded-lg shadow-md leading-loose"">
     <h2 class="text-2xl font-bold mb-4 text-center">アイテム登録</h2>
+      <% if @nail_item.errors.present? %>
+        <div class="alert alert-danger">
+          <ul class="ml-4 mb-2">
+            <% @nail_item.errors.full_messages.each do |message| %>
+              <li class="list-disc text-red-600"><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     <%= render "form", nail_item: @nail_item %>
 </div>

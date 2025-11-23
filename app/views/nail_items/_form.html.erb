@@ -3,30 +3,30 @@
       data-controller="autocomplete"
       data-autocomplete-url-value="<%= brands_search_nail_items_path %>"
       role="combobox">
-    <%= f.label :brand_name, 'ブランド名' %><br />
+    <%= f.label :brand_name, 'ブランドまたはメーカー名' %><br />
     <%= f.text_field :brand_name, autofocus: true, data: { autocomplete_target: 'input' }, class: "w-full p-0 px-2 border border-gray-300 bg-white rounded" %>
     <ul class="absolute z-50 w-full max-h-52 overflow-y-auto bg-white border border-gray-300 rounded"
       data-autocomplete-target="results">
     </ul> 
   </div>
 
-  <div class="field relative"
+  <div class="field relative mb-3"
       data-controller="autocomplete"
       data-autocomplete-url-value="<%= products_search_nail_items_path %>"
       role="combobox">
     <%= f.label :product_name, '商品名' %><br />
-    <%= f.text_field :product_name, data: { autocomplete_target: 'input' }, class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+    <%= f.text_field :product_name, data: { autocomplete_target: 'input' }, class: "w-full p-0 px-2 border border-gray-300 bg-white rounded" %>
     <ul class="absolute z-50 w-full max-h-52 overflow-y-auto bg-white border border-gray-300 rounded"
       data-autocomplete-target="results">
     </ul> 
   </div>
 
-  <div class="field relative"
+  <div class="field relative mb-3"
       data-controller="autocomplete"
       data-autocomplete-url-value="<%= prod_colors_search_nail_items_path %>"
       role="combobox">
-    <%= f.label :prod_color_name, '色名または色番号' %><br />
-    <%= f.text_field :prod_color_name, data: { autocomplete_target: 'input' }, class: "w-full mb-3 p-0 px-2 border border-gray-300 bg-white rounded" %>
+    <%= f.label :prod_color_name, '色番号または色名' %><br />
+    <%= f.text_field :prod_color_name, data: { autocomplete_target: 'input' }, class: "w-full p-0 px-2 border border-gray-300 bg-white rounded" %>
     <ul class="absolute z-50 w-full max-h-52 overflow-y-auto bg-white border border-gray-300 rounded"
       data-autocomplete-target="results">
     </ul> 

@@ -10,10 +10,15 @@ class NailItem < ApplicationRecord
   validates :brand_id, uniqueness: { 
     scope: [:product_id, :prod_color_id],
     message: "このアイテムは既に登録されています"
-}
+    }
+
+  validates :brand_id, presence: true
+  validates :product_id, presence: true
+  validates :prod_color_id, presence: true
 
 # クラスメソッドとして定義
   def self.create_with_associations(nail_item_params)
+    
     ActiveRecord::Base.transaction do
       # 1. 関連レコードを検索・作成
       brand = Brand.find_or_create_by(name: nail_item_params[:brand_name])
@@ -34,8 +39,5 @@ class NailItem < ApplicationRecord
         prod_color_id: prod_color.id
       )
     end
-  rescue ActiveRecord::RecordInvalid => e
-    Rails.logger.error "商品登録エラー: #{e.message}"
-    nil
   end
 end
