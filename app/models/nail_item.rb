@@ -4,8 +4,8 @@ class NailItem < ApplicationRecord
   belongs_to :prod_color
   has_many :log_nails, dependent: :destroy
   has_many :naillogs, through: :log_nails
-  has_many :nailstocks, dependent: :destroy
-
+  has_many :nail_stocks, dependent: :destroy
+  has_many :users, through: :nail_stocks
 
   validates :brand_id, presence: true
   validates :product_id, presence: true

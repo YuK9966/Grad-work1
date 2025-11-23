@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get :products_search, on: :collection
     get :prod_colors_search, on: :collection
   end
+  resource :nail_stocks
 
   # Defines the root path route ("/")
   # root "posts#index"
