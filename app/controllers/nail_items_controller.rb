@@ -1,6 +1,15 @@
 class NailItemsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
+  def index
+    @nail_items = NailItem.includes(:brand, :product, :prod_color)
+                          .order(:brand_id, :product_id, :prod_color_id)
+  end
+
+  def show
+    @nail_item = NailItem.find(params[:id])
+  end
+
   def new
     @nail_item = NailItem.new
   end
