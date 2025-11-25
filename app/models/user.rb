@@ -9,19 +9,19 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-end
 
-# NailItemをユーザーのNail_stocksに追加するメソッド
-def add_nail_stocks(nail_item)
-  item_stocks << nail_item
-end
+  # NailItemをユーザーのNail_stocksに追加するメソッド
+  def add_nail_stocks(nail_item)
+    item_stocks << nail_item
+  end
 
-# NailItemをユーザーのNail_stocksから削除するメソッド
-def rm_nail_stocks(nail_item)
-  item_stocks.destroy(nail_item)
-end
+  # NailItemをユーザーのNail_stocksから削除するメソッド
+  def rm_nail_stocks(nail_item)
+    item_stocks.destroy(nail_item)
+  end
 
-# ユーザーのNail_stocksに、特定のNailItemが登録されているか確認するメソッド
-def nail_stocked?(nail_item)
-  item_stocks.include?(nail_item)
+  # ユーザーのNail_stocksに、特定のNailItemが登録されているか確認するメソッド
+  def nail_stocked?(nail_item)
+    item_stocks.include?(nail_item)
+  end
 end

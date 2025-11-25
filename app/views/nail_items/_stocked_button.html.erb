@@ -1,0 +1,7 @@
+<div>
+  <% if current_user.nail_stocked?(item_sku) %>
+    <%= render partial: "rm_nail_stocks", locals: { item_sku: item_sku } %>
+  <% else %>
+    <%= render partial: "add_nail_stocks", locals: { item_sku: item_sku } %>
+  <% end %>
+</div>
