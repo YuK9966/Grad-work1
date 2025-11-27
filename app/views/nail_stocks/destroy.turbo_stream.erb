@@ -1,3 +1,7 @@
 <%= turbo_stream.replace "nail-stock-button-for-nail-item-#{@nail_item.id}" do %>
-  <%= render 'nail_items/add_nail_stocks', item_sku: @nail_item %>
+  <%= render "nail_items/add_nail_stocks", item_sku: @nail_item %>
+<% end %>
+
+<%= turbo_stream.update "flash" do %>
+  <%= render "layouts/flash"%>
 <% end %>
