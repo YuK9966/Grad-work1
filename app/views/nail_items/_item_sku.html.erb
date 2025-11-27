@@ -1,7 +1,8 @@
-<li class="flex gap-2">
+<li class="flex gap-2 justify-between items-center">
   <span class="w-20"><%= item_sku.brand.name %></span>
   /
   <span class="w-32"><%= item_sku.product.name %></span>
   /
   <span class="w-20"><%= item_sku.prod_color.name %></span>
+  <div class="w-9"><%= render partial: "stocked_button", locals: { item_sku: item_sku } %></div>
 </li>

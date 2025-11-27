@@ -1,4 +1,4 @@
 FactoryBot.define do
-  factory :nailstock do
+  factory :nail_stock do
   end
 end

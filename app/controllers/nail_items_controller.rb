@@ -34,24 +34,30 @@ class NailItemsController < ApplicationController
       redirect_to @nail_item, notice: "登録されました"
     else
       flash.now[:alert] = "登録に失敗しました"
-      puts @nail_item.errors.full_messages
       render :new, status: :unprocessable_entity # エラー時にステータスコード422を返す
     end
   end
 
+  # nail_items登録時オートコンプリート用
   def brands_search
-    @brands = Brand.where("name LIKE ?", "%#{params[:query]}%").order(:name).limit(10)
+    @brands = Brand.where("name LIKE ?", "%#{params[:query]}%").limit(10)
     render partial: "brands_search", layout: false
   end
 
   def products_search
-    @products = Product.where("name LIKE ?", "%#{params[:query]}%").order(:name).limit(15)
+    @products = Product.where("name LIKE ?", "%#{params[:query]}%").limit(15)
     render partial: "products_search", layout: false
   end
 
   def prod_colors_search
-    @prod_colors = ProdColor.where("name LIKE ?", "%#{params[:query]}%").order(:name).limit(15)
+    @prod_colors = ProdColor.where("name LIKE ?", "%#{params[:query]}%").limit(15)
     render partial: "prod_colors_search", layout: false
+  end
+  # /nail_items登録時オートコンプリート用ここまで
+
+  def nail_stocks
+    @item_stocks = current_user.item_stocks.includes(:brand, :product, :prod_color)
+                                          .order(:brand_id, :product_id, :prod_color_id)
   end
 
   private
