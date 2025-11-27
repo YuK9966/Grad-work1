@@ -1,15 +1,14 @@
 <%= link_to nail_stocks_path(nail_item_id: item_sku),
-        id: "nail-stock-button-for-nail-item-#{item_sku}",
+        id: "nail-stock-button-for-nail-item-#{item_sku.id}",
         data: { turbo_method: :post } do %>
-  <label class="inline-flex items-center me- cursor-pointer">
+  <label class="items-center">
     <input type="checkbox" class="sr-only peer">
       <div class="relative w-8 h-4 rounded-full peer
         peer-focus:ring-1 peer-focus:ring-[#90D1E0]
-        bg-[#DFF1F6] transition-all rounded-full after:absolute
-        after:bg-white after:rounded-full after:h-2.5 after:w-2.5
+        bg-white transition-all rounded-full after:absolute
+        after:bg-[#DFF1F6] after:rounded-full after:h-2.5 after:w-2.5
         after:top-0.75 after:start-[1px] after:transition-all
-        peer-checked:after:translate-x-5 peer-checked:bg-[#90D1E0]
-        top-1 left-1"></div>
-    <span class="select-none ms-3 text-xs">Don't Have</span>
+        after:checked:bg-white
+        peer-checked:after:translate-x-5 peer-checked:bg-[#90D1E0]"></div>
   </label>
 <% end %>
