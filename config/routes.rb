@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get :nail_stocks # nail_items/nail_stocksへのルーティング(nail_itemsのディレクトリからnail_stocksのアクションを加えることができる)
     end
   end
-  resources :nail_stocks, only: [:create, :destroy] # nail_stocksのcreate,destroyアクションのみルーティング
+  resources :nail_stocks, only: [ :create, :destroy ] # nail_stocksのcreate,destroyアクションのみルーティング
 
   # Defines the root path route ("/")
   # root "posts#index"
