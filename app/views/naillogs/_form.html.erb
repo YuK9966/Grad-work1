@@ -1,0 +1,37 @@
+<div class="form-control mb-4">
+  <%= form_with model: naillog do |f| %>
+    <div class="field mb-3">
+      <%= f.label :title, "タイトル" %><br />
+      <%= f.text_field :title, class: "input w-full" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= f.label :nailed_date, "塗った日" %><br />
+      <%= f.date_field :nailed_date, class: "input input-bordered w-40" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= f.label :design_url, "参考デザイン(URL)" %><br />
+      <%= f.url_field :design_url, placeholder: "https://", class: "input w-full" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= f.label :nail_shape, "爪の形" %><br />
+      <%= f.select :nail_shape, 
+        options_for_select(["ラウンド", "オーバル", "スクエア", "スクエアオフ", "アーモンド", "バレリーナ", "その他"],
+        naillog.nail_shape), { prompt: '選択してください' }, class: "select w-40" %>
+    </div>
+
+    <div class="field mb-3">
+      <%= f.label :body, "コメント" %><br />
+      <%= f.text_area :body, class: "textarea textarea-bordered w-full", rows: 3 %>
+    </div>
+
+    <div class="text-center mt-3 leading-loose flex justify-center gap-4">
+      <!-- 下書き保存ボタン -->
+      <%= f.submit "下書き保存", name: "commit", value: "下書き", class: "btn px-4 w-20 font-bold text-primary text-sm transition-all duration-300 text-center" %>
+      <!-- 投稿ボタン -->
+      <%= f.submit "投稿", class: "btn btn-primary px-4 w-20 font-bold text-sm text-center" %>
+      </div>
+  <% end %>
+</div>
