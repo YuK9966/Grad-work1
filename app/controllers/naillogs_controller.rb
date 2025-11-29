@@ -1,5 +1,5 @@
 class NaillogsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create edit]
 
   def index
     @naillogs = Naillog.order(created_at: :desc)
@@ -11,13 +11,21 @@ class NaillogsController < ApplicationController
 
   def create
     @naillog = current_user.naillogs.new(naillog_params)
-    # 送信ボタンで status を設定
+    # formのボタンでstatusを設定
     @naillog.status = (params[:commit] == "下書き") ? "draft" : "published"
     if @naillog.save
-      redirect_to naillogs_path, notice: "Nail Logを投稿しました"
+      if @naillog.status == "draft"
+        redirect_to edit_naillog_path(@naillog), notice: "Nail Logを下書き保存しました"
+      else
+        redirect_to naillogs_path, notice: "Nail Logを投稿しました"
+      end
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @naillog = current_user.naillogs.find(params[:id])
   end
 
 private

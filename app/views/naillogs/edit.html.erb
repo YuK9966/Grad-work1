@@ -1,0 +1,11 @@
+<div class="container mx-auto max-w-sm mx-6 mt-6 mb-10 p-6 rounded-lg shadow-md leading-loose bg-base-300">
+  <h2 class="text-2xl font-bold mb-4 text-center">New Nail Log</h2>
+    <% if @naillog.errors.present? %>
+      <ul class="ml-4 mb-2">
+        <% @naillog.errors.full_messages.each do |message| %>
+          <li class="list-disc text-red-600"><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <%= render "form", naillog: @naillog %>
+</div>
