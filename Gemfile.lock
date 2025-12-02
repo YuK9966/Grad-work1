@@ -126,6 +126,8 @@ GEM
       railties (>= 6.1.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
+    heroicon (1.0.0)
+      rails (>= 5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.1)
@@ -373,6 +375,7 @@ DEPENDENCIES
   devise (~> 4.9)
   devise-i18n
   factory_bot_rails
+  heroicon
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

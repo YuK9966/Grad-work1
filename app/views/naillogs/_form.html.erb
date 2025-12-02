@@ -1,7 +1,7 @@
 <div class="form-control mb-4">
   <%= form_with model: naillog do |f| %>
     <div class="field mb-3">
-      <%= f.label :title, "タイトル" %><br />
+      <%= f.label :title, "タイトル" %><span class="text-red-500"> *</span><br />
       <%= f.text_field :title, class: "input w-full" %>
     </div>
 
