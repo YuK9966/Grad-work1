@@ -6,4 +6,5 @@ class Naillog < ApplicationRecord
   has_many :nail_items, through: :log_nails
 
   validates :title, presence: true
+  validates :status, presence: true
 end
