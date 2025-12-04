@@ -29,7 +29,7 @@ class MainImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  process convert: 'webp'
+  process convert: "webp"
 
   # Create different versions of your uploaded files:
   # version :thumb do
