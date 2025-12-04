@@ -19,8 +19,8 @@
 
   <!-- 画像側要素 -->
   <div class="w-18 h-18 bg-gray-200 rounded-md overflow-hidden flex-shrink-0">
-    <% if log.image_url.present? %>
-      <%= image_tag log.image_url, class: "w-18 h-18 object-cover" %>
+    <% if log.main_image.present? %>
+      <%= image_tag log.main_image.url, class: "w-18 h-18 object-cover" %>
     <% else %>
       <!-- 画像がない場合の仮表示 -->
       <div class="w-18 h-18 bg-gray-100 flex items-center justify-center text-gray-400 text-xs">

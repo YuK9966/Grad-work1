@@ -29,6 +29,8 @@ class MainImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  process convert: 'webp'
+
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]
