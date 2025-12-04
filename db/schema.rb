@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_27_080544) do
+ActiveRecord::Schema[7.2].define(version: 2025_12_03_082244) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_27_080544) do
     t.datetime "updated_at", null: false
     t.index ["color_id"], name: "index_log_colors_on_color_id"
     t.index ["naillog_id"], name: "index_log_colors_on_naillog_id"
+  end
+
+  create_table "log_images", force: :cascade do |t|
+    t.bigint "naillog_id", null: false
+    t.string "image_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_url"], name: "index_log_images_on_image_url", unique: true
+    t.index ["naillog_id"], name: "index_log_images_on_naillog_id"
   end
 
   create_table "log_nails", force: :cascade do |t|
@@ -75,12 +84,13 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_27_080544) do
     t.text "body"
     t.date "nailed_date"
     t.string "design_url"
-    t.string "image_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "下書き", null: false
     t.string "nail_shape"
+    t.string "main_image"
+    t.index ["main_image"], name: "index_naillogs_on_main_image", unique: true
     t.index ["user_id"], name: "index_naillogs_on_user_id"
   end
 
@@ -118,6 +128,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_27_080544) do
 
   add_foreign_key "log_colors", "colors"
   add_foreign_key "log_colors", "naillogs"
+  add_foreign_key "log_images", "naillogs"
   add_foreign_key "log_nails", "nail_items"
   add_foreign_key "log_nails", "naillogs"
   add_foreign_key "nail_items", "brands"
