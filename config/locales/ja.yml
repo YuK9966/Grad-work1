@@ -1,27 +1,28 @@
 ja:
-  models:
-    nail_item: "アイテム"
-    brand: "ブランドまたはメーカー名"
-    product: "商品名"
-    prod_color: "色番号または色名"
-    naillog: "Nail Log"
-    nail_stocks: "Your Nail Stock"
-  attributes:
-    nail_item:
-      brand_id: "ブランドまたはメーカー名"
-      product_id: "商品名"
-      prod_color_id: "色番号または色名"
+  activerecord:
+    models:
+      nail_item: "アイテム"
+      brand: "ブランドまたはメーカー名"
+      product: "商品名"
+      prod_color: "色番号または色名"
+      naillog: "Nail Log"
       nail_stocks: "Your Nail Stock"
-    brand:
-      name: "ブランド/メーカー名"
-    product:
-      name: "商品名"
-    prod_color:
-      name: "色番号または色名"
-    naillog:
-      nail_item_id: "アイテム"
-  nail_stock:
-    nail_item: "アイテム"
-    brand: "ブランドまたはメーカー名"
-    product: "商品名"
-    prod_color: "色番号または色名"
+    attributes:
+      nail_item:
+        brand_id: "ブランドまたはメーカー名"
+        product_id: "商品名"
+        prod_color_id: "色番号または色名"
+        nail_stocks: "Your Nail Stock"
+      brand:
+        name: "ブランド/メーカー名"
+      product:
+        name: "商品名"
+      prod_color:
+        name: "色番号または色名"
+      naillog:
+        nail_item_id: "アイテム"
+      nail_stock:
+        nail_item: "アイテム"
+        brand: "ブランドまたはメーカー名"
+        product: "商品名"
+        prod_color: "色番号または色名"
