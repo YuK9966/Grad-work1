@@ -11,6 +11,12 @@
     </div>
 
     <div class="field mb-3">
+      <%= f.label :main_image, "メイン画像" %><br />
+      <%= f.file_field :main_image, class: "file-input file-input-primary" %>
+      <%= f.hidden_field :picture_cache %>
+    </div>
+
+    <div class="field mb-3">
       <%= f.label :design_url, "参考デザイン(URL)" %><br />
       <%= f.url_field :design_url, placeholder: "https://", class: "input w-full" %>
     </div>
