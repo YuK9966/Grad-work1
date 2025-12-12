@@ -28,6 +28,16 @@
         naillog.nail_shape), { prompt: '選択してください' }, class: "select w-40" %>
     </div>
 
+    <div class="field">
+    <div id="log-nails-container"
+        data-controller="log-nails"
+        data-log-nails-options="<%= escape_once options_for_select(@nail_items.map { |item| [ "#{item.brand.name} / #{item.product.name} / #{item.prod_color.name}", item.id ] }) %>">
+      <%= f.label :nail_item_id, "使用したアイテム" %>
+      <%= f.fields_for :log_nails do |lf| %>
+        <%= render "nail_items_fields", f: lf, nail_items: @nail_items %>
+      <% end %>
+    </div>
+
     <div class="field mb-3">
       <%= f.label :body, "コメント" %><br />
       <%= f.text_area :body, class: "textarea textarea-bordered w-full", rows: 3 %>

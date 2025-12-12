@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "log_nails/create"
+  get "log_nails/destroy"
   get "nail_stocks/index"
   get "nail_stocks/create"
   get "nail_stocks/destroy"
@@ -16,7 +18,12 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  resources :naillogs
+  resources :naillogs do
+    collection do
+      get :products_by_brand
+      get :colors_by_product
+    end
+  end
   resources :nail_items do
     get :brands_search, on: :collection
     get :products_search, on: :collection
