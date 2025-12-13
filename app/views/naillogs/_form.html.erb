@@ -11,8 +11,8 @@
     </div>
 
     <div class="field mb-3">
-      <%= f.label :main_image, "メイン画像" %><br />
-      <%= f.file_field :main_image, class: "file-input file-input-primary" %>
+      <%= f.label :main_image, "メイン画像", class: "text-xs"%><br />
+      <%= f.file_field :main_image, class: "file-input file-input-primary text-xxs" %>
       <%= f.hidden_field :picture_cache %>
     </div>
 
@@ -29,13 +29,21 @@
     </div>
 
     <div class="field">
-    <div id="log-nails-container"
-        data-controller="log-nails"
-        data-log-nails-options="<%= escape_once options_for_select(@nail_items.map { |item| [ "#{item.brand.name} / #{item.product.name} / #{item.prod_color.name}", item.id ] }) %>">
-      <%= f.label :nail_item_id, "使用したアイテム" %>
-      <%= f.fields_for :log_nails do |lf| %>
-        <%= render "nail_items_fields", f: lf, nail_items: @nail_items %>
-      <% end %>
+      <div id="log-nails-container"
+          data-controller="log-nails"
+          data-log-nails-options-value="<%= escape_once options_for_select(@nail_items.map { |item| [ "#{item.brand.name} / #{item.product.name} / #{item.prod_color.name}", item.id ] }) %>">
+
+        <%= f.label :nail_item_id, "使用したアイテム" %>
+        <%= f.fields_for :log_nails do |lf| %>
+          <%= render "nail_items_fields", f: lf, nail_items: @nail_items %>
+        <% end %>
+        <div data-log-nails-target="rows"></div>
+        <button type="button"
+            data-action="log-nails#add"
+            class="btn btn-primary mb-3 text-sm">
+        ＋ アイテム追加
+        </button>
+      </div>
     </div>
 
     <div class="field mb-3">
