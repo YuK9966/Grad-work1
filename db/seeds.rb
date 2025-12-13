@@ -15,6 +15,12 @@ User.create!(
   nickname: 'ゆっくり',
 )
 
+User.create!(
+  email: 'user2@exam.com',
+  password: 'aaaaaaaa',
+  nickname: 'ユクリ',
+)
+
 Naillog.create!(
   title: '初めてのネイルログ',
   body: 'これは私の最初のネイルログです！',
@@ -25,7 +31,7 @@ Naillog.create!(
 
 Naillog.create!(
   title: 'にこめのネイルログ',
-  body: '１のネイルログです！',
+  body: '2のネイルログです！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id
@@ -62,3 +68,90 @@ Naillog.create!(
   design_url: 'https://example.com/design1',
   user_id: User.first.id
 )
+
+
+# NailItems生成
+p "create NailItems"
+brand = Brand.create!(
+  name: "ネイル工房"
+)
+
+product = Product.create!(
+  brand_id: brand.id,
+  name: "フルーツマグネット"
+)
+
+prod_color1 = ProdColor.create!(
+  product_id: product.id,
+  name: "01 onion"
+)
+
+prod_color2 = ProdColor.create!(
+  product_id: product.id,
+  name: "02 lemon"
+)
+
+nailitem1 = NailItem.create!(
+  brand_id: brand.id,
+  product_id: product.id,
+  prod_color_id: prod_color1.id
+)
+nailitem2 = NailItem.create!(
+  brand_id: brand.id,
+  product_id: product.id,
+  prod_color_id: prod_color2.id
+)
+
+brand2 = Brand.create!(
+  name: "Coikaze"
+)
+product2 = Product.create!(
+  brand_id: brand2.id,
+  name: "ゴールドマグネット"
+)
+
+prod_color3 = ProdColor.create!(
+  product_id: product2.id,
+  name: "MG27 シャンペン"
+)
+prod_color4 = ProdColor.create!(
+  product_id: product2.id,
+  name: "MG28 ピンクビーチ"
+)
+
+product3 = Product.create!(
+  brand_id: brand2.id,
+  name: "フラッシュマグネット"
+)
+prod_color5 = ProdColor.create!(
+  product_id: product3.id,
+  name: "MG26 ライラック"
+)
+
+nailitem3 = NailItem.create!(
+  brand_id: brand2.id,
+  product_id: product2.id,
+  prod_color_id: prod_color3.id
+)
+nailitem4 = NailItem.create!(
+  brand_id: brand2.id,
+  product_id: product3.id,
+  prod_color_id: prod_color5.id
+)
+
+# NailStocks生成
+p "create NailStocks check point1"
+NailStock.create!(
+  nail_item_id: nailitem1.id,
+  user_id: User.first.id
+)
+NailStock.create!(
+  nail_item_id: nailitem2.id,
+  user_id: User.first.id
+)
+NailStock.create!(
+  nail_item_id: nailitem3.id,
+  user_id: User.first.id
+)
+
+p "create done"

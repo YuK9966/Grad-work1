@@ -1,0 +1,2 @@
+module LogNailsHelper
+end

@@ -6,7 +6,10 @@ module.exports = {
     "./app/javascript/**/*.{js,jsx,ts,tsx}",π
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        xxs: "0.6rem",
+    },
   },
   plugins: [
     require("daisyui"),
