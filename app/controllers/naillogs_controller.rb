@@ -69,6 +69,6 @@ class NaillogsController < ApplicationController
 
   def naillog_params
     params.require(:naillog).permit(:title, :body, :nailed_date, :design_url, :status, :nail_shape, :main_image,
-                                  log_nails_attributes: [:id, :nail_item_id, :_destroy])
+                                  log_nails_attributes: [ :id, :nail_item_id, :_destroy ])
   end
 end

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        xxs: "0.6rem",
+        xxs: ['0.6rem', { lineHeight: '0.85rem' }],
     },
   },
   plugins: [
