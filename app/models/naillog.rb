@@ -1,6 +1,5 @@
 class Naillog < ApplicationRecord
   attr_accessor :brand_id, :product_id, :prod_color_id
-  
   scope :published, -> { where(status: "published") }
 
   belongs_to :user

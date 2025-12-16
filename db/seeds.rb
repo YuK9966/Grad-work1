@@ -28,7 +28,8 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -37,7 +38,8 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -46,7 +48,8 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -55,7 +58,8 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -64,7 +68,8 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -73,16 +78,18 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
-Naillog.create!(
+naillogs7 = Naillog.create!(
   title: 'ネイルログ7',
   body: 'ななこめ！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: user2.id,
-  status: 'published'
+  status: 'published',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -91,7 +98,8 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: user2.id,
-  status: 'draft'
+  status: 'draft',
+  nail_shape: 'オーバル'
 )
 
 Naillog.create!(
@@ -100,8 +108,10 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'draft'
+  status: 'draft',
+  nail_shape: 'オーバル'
 )
+
 p "create Naillogs done"
 
 # NailItems生成
@@ -186,6 +196,18 @@ NailStock.create!(
 NailStock.create!(
   nail_item_id: nailitem3.id,
   user_id: User.first.id
+)
+p "create nailstocks"
+
+# log_nails 中間テーブル生成
+LogNail.create!(
+nail_item_id: nailitem3.id,
+naillog_id: naillogs7.id
+)
+
+LogNail.create!(
+nail_item_id: nailitem1.id,
+naillog_id: naillogs7.id
 )
 
 p "create done"

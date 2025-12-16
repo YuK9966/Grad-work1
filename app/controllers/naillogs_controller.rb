@@ -1,10 +1,10 @@
 class NaillogsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit]
-  before_action :set_naillog, only: %i[show edit update destroy]
+  before_action :set_naillog, only: %i[edit update destroy]
   before_action :load_nail_items, only: %i[new create edit update]
 
   def index
-    @naillogs = Naillog.where(status: "published").order(created_at: :desc)
+    @naillogs = Naillog.published.order(created_at: :desc)
   end
 
   def new
@@ -30,6 +30,8 @@ class NaillogsController < ApplicationController
 
   def show
     @naillog = Naillog.find(params[:id])
+    @use_items = @naillog.log_nails
+                         .includes(nail_item: [ :brand, :product, :prod_color ])
     unless @naillog.status == "published" || @naillog.user == current_user
       redirect_to root_path, alert: "この投稿は公開されていません"
     end
@@ -52,7 +54,6 @@ class NaillogsController < ApplicationController
     end
   end
 
-  # DELETE /naillogs/:id
   def destroy
     @naillog.destroy
     redirect_to naillogs_path, notice: "削除しました"
