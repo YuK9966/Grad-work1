@@ -1,0 +1,55 @@
+<% content_for :main_bg_class, "bg-base-300" %>
+  <div class="container mx-auto max-w-sm mx-6 mt-6 mb-10 px-8 py-6 rounded-lg shadow-md leading-loose bg-white">
+
+  <!-- タイトル等 -->
+    <div class="text-center items-center px-6">
+    <!-- タイトル -->
+      <h2 class="card-title">
+        <%= @naillog.title %>
+      </h2>
+    </div>
+
+    <!-- ユーザー名 -->
+    <div class="items-center text-right leading-4 mb-4 px-6">
+      <%= @naillog.user.nickname %>
+      <br>
+      <!-- 塗った日 -->
+      塗った日：<%= @naillog.nailed_date.strftime("%Y-%m-%d") %>
+      <br>
+    <!-- 投稿日 -->
+      投稿日：<%= @naillog.created_at.strftime("%Y-%m-%d") %>
+    </div>
+
+  <!-- 画像側要素 -->
+    <figure class="items-center place-items-center mb-4 px-1">
+      <% if @naillog.main_image.present? %>
+        <%= image_tag @naillog.main_image.url, class: "w-80 h-80" %>
+      <% else %>
+        <!-- 画像がない場合の仮表示 -->
+        <div class="w-70 h-70 bg-gray-100 flex items-center justify-center text-gray-400 text-base">
+          no image
+        </div>
+      <% end %>
+    </figure>
+
+    <!-- 詳細要素 -->
+      <div class="items-left text-left mb-1 px-6">
+    <!-- タグ等 -->
+    <!-- 爪の形 -->
+        #<%= @naillog.nail_shape %>
+      </div>
+
+    <!-- 使用アイテム -->
+    <div class="items-left text-left mb-3">
+      <b>使用アイテム</b>
+        <ul class="list-unstyled">
+          <%= render partial: "naillogs/use_items", collection: @use_items %>
+        </ul>
+    </div>
+
+    <!-- body -->
+    <div class="text-left items-left my-5 px-6 text-sm">
+      <%= @naillog.body %>
+    </div>
+
+  </div>

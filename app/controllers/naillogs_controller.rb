@@ -1,10 +1,10 @@
 class NaillogsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit]
-  before_action :set_naillog, only: %i[show edit update destroy]
+  before_action :set_naillog, only: %i[edit update destroy]
   before_action :load_nail_items, only: %i[new create edit update]
 
   def index
-    @naillogs = Naillog.order(created_at: :desc)
+    @naillogs = Naillog.published.order(created_at: :desc)
   end
 
   def new
@@ -29,6 +29,12 @@ class NaillogsController < ApplicationController
   end
 
   def show
+    @naillog = Naillog.find(params[:id])
+    @use_items = @naillog.log_nails
+                         .includes(nail_item: [ :brand, :product, :prod_color ])
+    unless @naillog.status == "published" || @naillog.user == current_user
+      redirect_to root_path, alert: "この投稿は公開されていません"
+    end
   end
 
   def edit
@@ -48,7 +54,6 @@ class NaillogsController < ApplicationController
     end
   end
 
-  # DELETE /naillogs/:id
   def destroy
     @naillog.destroy
     redirect_to naillogs_path, notice: "削除しました"
@@ -69,6 +74,6 @@ class NaillogsController < ApplicationController
 
   def naillog_params
     params.require(:naillog).permit(:title, :body, :nailed_date, :design_url, :status, :nail_shape, :main_image,
-                                  log_nails_attributes: [:id, :nail_item_id, :_destroy])
+                                  log_nails_attributes: [ :id, :nail_item_id, :_destroy ])
   end
 end

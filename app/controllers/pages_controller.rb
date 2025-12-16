@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @naillogs = Naillog.order(created_at: :desc).limit(5)
+    @naillogs = Naillog.published.order(created_at: :desc).limit(5)
   end
 end

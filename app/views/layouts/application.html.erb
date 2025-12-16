@@ -22,7 +22,7 @@
     <%= render "shared/header" %>
 
     <!-- メインコンテンツ -->
-    <main class="pt-14">
+    <main class="pt-14 place-items-center <%= content_for?(:main_bg_class) ? yield(:main_bg_class) : 'bg-white' %>">
       <!-- フラッシュメッセージ -->
         <%= render "layouts/flash" %>
       <div class="flex-1 mb-10 overflow-auto justify-center text-gray-600 px-6 sm:px-6 lg:px-0">

@@ -12,7 +12,7 @@
 
     <div class="field mb-3">
       <%= f.label :main_image, "メイン画像", class: "text-xs"%><br />
-      <%= f.file_field :main_image, class: "file-input file-input-primary text-xxs" %>
+      <%= f.file_field :main_image, class: "file-input file-input-primary text-[0.6rem] leading-[0.85rem]" %>
       <%= f.hidden_field :picture_cache %>
     </div>
 
@@ -40,7 +40,7 @@
         <div data-log-nails-target="rows"></div>
         <button type="button"
             data-action="log-nails#add"
-            class="btn btn-primary mb-3 text-sm">
+            class="btn btn-primary mb-3 text-xs">
         ＋ アイテム追加
         </button>
       </div>
