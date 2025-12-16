@@ -4,7 +4,7 @@ class NaillogsController < ApplicationController
   before_action :load_nail_items, only: %i[new create edit update]
 
   def index
-    @naillogs = Naillog.order(created_at: :desc)
+    @naillogs = Naillog.where(status: "published").order(created_at: :desc)
   end
 
   def new
@@ -29,6 +29,10 @@ class NaillogsController < ApplicationController
   end
 
   def show
+    @naillog = Naillog.find(params[:id])
+    unless @naillog.status == "published" || @naillog.user == current_user
+      redirect_to root_path, alert: "この投稿は公開されていません"
+    end
   end
 
   def edit

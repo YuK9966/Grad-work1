@@ -15,18 +15,20 @@ User.create!(
   nickname: 'ゆっくり',
 )
 
-User.create!(
+user2 = User.create!(
   email: 'user2@exam.com',
   password: 'aaaaaaaa',
   nickname: 'ユクリ',
 )
 
+p "create Naillog start"
 Naillog.create!(
   title: '初めてのネイルログ',
   body: 'これは私の最初のネイルログです！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
-  user_id: User.first.id
+  user_id: User.first.id,
+  status: 'published'
 )
 
 Naillog.create!(
@@ -34,7 +36,8 @@ Naillog.create!(
   body: '2のネイルログです！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
-  user_id: User.first.id
+  user_id: User.first.id,
+  status: 'published'
 )
 
 Naillog.create!(
@@ -42,7 +45,8 @@ Naillog.create!(
   body: '3こめ！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
-  user_id: User.first.id
+  user_id: User.first.id,
+  status: 'published'
 )
 
 Naillog.create!(
@@ -50,7 +54,8 @@ Naillog.create!(
   body: '4こめ！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
-  user_id: User.first.id
+  user_id: User.first.id,
+  status: 'published'
 )
 
 Naillog.create!(
@@ -58,7 +63,8 @@ Naillog.create!(
   body: '5こめ！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
-  user_id: User.first.id
+  user_id: User.first.id,
+  status: 'published'
 )
 
 Naillog.create!(
@@ -66,9 +72,37 @@ Naillog.create!(
   body: '6こめ！',
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
-  user_id: User.first.id
+  user_id: User.first.id,
+  status: 'published'
 )
 
+Naillog.create!(
+  title: 'ネイルログ7',
+  body: 'ななこめ！',
+  nailed_date: Date.today,
+  design_url: 'https://example.com/design1',
+  user_id: user2.id,
+  status: 'published'
+)
+
+Naillog.create!(
+  title: '8こめのネイルログ　ユクリ下書き',
+  body: '8こめ！したがき',
+  nailed_date: Date.today,
+  design_url: 'https://example.com/design1',
+  user_id: user2.id,
+  status: 'draft'
+)
+
+Naillog.create!(
+  title: '9こめのネイルログ　ゆっくり下書き',
+  body: '9こめ！',
+  nailed_date: Date.today,
+  design_url: 'https://example.com/design1',
+  user_id: User.first.id,
+  status: 'draft'
+)
+p "create Naillogs done"
 
 # NailItems生成
 p "create NailItems"
