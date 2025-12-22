@@ -43,10 +43,8 @@ class NaillogsController < ApplicationController
   end
 
   def update
-    # ensure only owner can update (set_naillog uses current_user)
+    @naillog = current_user.naillogs.find(params[:id])
     if @naillog.update(naillog_params)
-      @naillog.log_nails.destroy_all
-      attach_nail_item!(@naillog)
       redirect_to @naillog, notice: "更新しました"
     else
       load_nail_items
@@ -54,8 +52,10 @@ class NaillogsController < ApplicationController
     end
   end
 
+
   def destroy
-    @naillog.destroy
+    @naillog = current_user.naillogs.find(params[:id])
+    @naillog.destroy!
     redirect_to naillogs_path, notice: "削除しました"
   end
 

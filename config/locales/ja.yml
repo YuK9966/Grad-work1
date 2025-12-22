@@ -26,3 +26,5 @@ ja:
         brand: "ブランドまたはメーカー名"
         product: "商品名"
         prod_color: "色番号または色名"
+  defaults:
+    delete_confirm: "削除してよろしいですか？"

@@ -1,8 +1,22 @@
 <% content_for :main_bg_class, "bg-base-300" %>
   <div class="container mx-auto max-w-sm mx-6 mt-6 mb-10 px-8 py-6 rounded-lg shadow-md leading-loose bg-white">
 
+  <!-- 編集・削除ボタン -->
+  <% if current_user.own?(@naillog) %>
+    <div class="flex justify-end text-primary gap-2 px-1">
+      <%= link_to edit_naillog_path(@naillog), id: "button-edit-#{@naillog.id}" do %>
+        <%= heroicon "pencil", options: {class: "items-right", width: "15", height: "15" } %>
+      <% end %>
+      <%= link_to @naillog,
+            id: "button-delete-#{@naillog.id}",
+            data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') } do %>
+        <%= heroicon "trash", options: {class: "items-right", width: "15", height: "15" } %>
+      <% end %>
+    </div>
+  <% end %>
+
   <!-- タイトル等 -->
-    <div class="text-center items-center px-6">
+    <div class="text-center items-center px-1">
     <!-- タイトル -->
       <h2 class="card-title">
         <%= @naillog.title %>
@@ -10,7 +24,7 @@
     </div>
 
     <!-- ユーザー名 -->
-    <div class="items-center text-right leading-4 mb-4 px-6">
+    <div class="items-center text-right leading-4 mb-4 px-1">
       <%= @naillog.user.nickname %>
       <br>
       <!-- 塗った日 -->
@@ -53,3 +67,4 @@
     </div>
 
   </div>
+

@@ -7,5 +7,16 @@
         <% end %>
       </ul>
     <% end %>
-  <%= render "form", naillog: @naillog %>
+    <div class="form-control mb-4">
+      <%= form_with model: @naillog do |f| %>
+        <%= render "form",  f: f, nail_items: @nail_items %>
+
+          <div class="text-center mt-3 leading-loose flex justify-center gap-4">
+            <!-- 下書き保存ボタン -->
+            <%= f.submit "下書き保存", name: "commit", value: "下書き", class: "btn px-4 w-20 font-bold text-primary text-sm transition-all duration-300 text-center" %>
+            <!-- 投稿ボタン -->
+            <%= f.submit "投稿", class: "btn btn-primary px-4 w-20 font-bold text-sm text-center" %>
+          </div>
+      <% end %>
+    </div>
 </div>
