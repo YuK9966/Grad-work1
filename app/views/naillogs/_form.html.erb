@@ -1,6 +1,8 @@
     <div class="field mb-3">
-      <%= f.label :title, "タイトル" %><span class="text-red-500"> *</span><br />
-      <%= f.text_field :title, class: "input w-full" %>
+      <div class="flex items-center gap-1">
+        <%= f.label :title, "タイトル", class: "inline-block" %><span class="text-red-500"> *</span><br />
+      </div>
+        <%= f.text_field :title, class: "input w-full" %>
     </div>
 
     <div class="field mb-3">
@@ -10,7 +12,7 @@
 
     <div class="field mb-3">
       <%= f.label :main_image, "メイン画像", class: "text-xs"%><br />
-      <%= f.file_field :main_image, class: "file-input file-input-primary text-[0.6rem] leading-[0.85rem]" %>
+      <%= f.file_field :main_image, class: "file-input file-input-primary text-xs file:text-xs file:px-2" %>
       <%= f.hidden_field :picture_cache %>
     </div>
 
@@ -38,7 +40,7 @@
         <div data-log-nails-target="rows"></div>
         <button type="button"
             data-action="log-nails#add"
-            class="btn btn-primary mb-3 text-xs">
+            class="btn btn-primary mb-3 text-xs px-2">
         ＋ アイテム追加
         </button>
       </div>
@@ -48,4 +50,3 @@
       <%= f.label :body, "コメント" %><br />
       <%= f.text_area :body, class: "textarea textarea-bordered w-full", rows: 3 %>
     </div>
-    

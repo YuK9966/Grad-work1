@@ -7,6 +7,7 @@ ja:
       prod_color: "色番号または色名"
       naillog: "Nail Log"
       nail_stocks: "Your Nail Stock"
+      log_nail: "使用"
     attributes:
       nail_item:
         brand_id: "ブランドまたはメーカー名"
@@ -20,11 +21,20 @@ ja:
       prod_color:
         name: "色番号または色名"
       naillog:
-        nail_item_id: "アイテム"
+        title: "タイトル"
+        nail_item: "アイテム"
       nail_stock:
         nail_item: "アイテム"
         brand: "ブランドまたはメーカー名"
         product: "商品名"
         prod_color: "色番号または色名"
+      log_nail:
+        nail_item: "したアイテム"
+    errors:
+      models:
+        log_nail:
+          attributes:
+            nail_item:
+              required: "を選択するか、不要な行を削除してください"
   defaults:
     delete_confirm: "削除してよろしいですか？"
