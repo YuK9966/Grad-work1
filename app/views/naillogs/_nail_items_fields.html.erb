@@ -1,4 +1,4 @@
-<div class="log-nail-item flex gap-2 mb-1" data-log-nails-target="row">
+<div class="log-nail-item flex items-center gap-2 mb-1" data-log-nails-target="row">
   <%= f.select :nail_item_id,
         options_from_collection_for_select(
           nail_items,
@@ -7,16 +7,16 @@
           f.object.nail_item_id
         ),
         { include_blank: "--" },
-        class: "select w-full text-[0.6rem] leading-[0.85rem]" %>
+        class: "select w-50 text-[0.6rem] leading-[0.85rem]" %>
 
   <% if f.object.persisted? %>
     <%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "削除" %>
+    <%= f.label :_destroy, "削除", class: "text-xs" %>
   <% else %>
     <button type="button"
             data-action="log-nails#remove"
-            class="btn btn-outline text-xs">
-      削除
+            class="btn btn-outline text-[0.6rem] leading-[0.85rem]">
+      取消
     </button>
   <% end %>
 </div>

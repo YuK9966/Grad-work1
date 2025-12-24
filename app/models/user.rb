@@ -10,6 +10,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+  def own?(record)
+    record.respond_to?(:user_id) && record.user_id == id
+  end
+
   # NailItemをユーザーのNail_stocksに追加するメソッド
   def add_nail_stocks(nail_item)
     item_stocks << nail_item
