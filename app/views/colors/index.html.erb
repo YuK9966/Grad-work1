@@ -16,7 +16,13 @@
       <%= link_to "別の色で再表示", colors_index_path %>
     </button>
     <br><br>
-    <%= link_to "この色のデザインを探しに行く", "https://jp.pinterest.com/search/pins/?q=%E3%83%8D%E3%82%A4%E3%83%AB%20#{@color.name}", class: "font-bold text-primary" ,target: "_blank", rel: "noopener noreferrer", data: { turbo_confirm: "外部サイトへ移動します。よろしいですか？" } %>
+    <%= link_to "この色のデザインを探しに行く", "https://jp.pinterest.com/search/pins/?q=%E3%83%8D%E3%82%A4%E3%83%AB%20#{@color.name}", 
+    class: "font-bold text-primary" ,
+    target: "_blank", rel: "noopener noreferrer",
+    data: {
+      controller: "confirm",
+      action: "click->confirm#ask",
+    } %>
   <br>
   （外部サイトに遷移します）
 
