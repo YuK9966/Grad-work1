@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "colors/index"
   get "log_nails/create"
   get "log_nails/destroy"
   get "nail_stocks/index"
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
     end
   end
   resources :nail_stocks, only: [ :create, :destroy ] # nail_stocksのcreate,destroyアクションのみルーティング
+  resources :colors, only: [ :index ]
 
   # Defines the root path route ("/")
   # root "posts#index"

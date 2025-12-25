@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import LogNailsController from "./log_nails_controller"
 application.register("log-nails", LogNailsController)
+
+import ConfirmController from "./confirm_controller"
+application.register("confirm", ConfirmController)

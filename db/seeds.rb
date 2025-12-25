@@ -210,4 +210,90 @@ nail_item_id: nailitem1.id,
 naillog_id: naillogs7.id
 )
 
-p "create done"
+# 色データ生成
+p "create Colors"
+Color.create!(
+  name: "赤系",
+  color_code: "#C83635"
+)
+
+Color.create!(
+  name: "ピンク系",
+  color_code: "#EC74A3"
+)
+
+Color.create!(
+  name: "水色系",
+  color_code: "#90D1E0"
+)
+
+Color.create!(
+  name: "オレンジ系",
+  color_code: "#E07A3A"
+)
+
+Color.create!(
+  name: "黄色系",
+  color_code: "#E6C63A"
+)
+
+Color.create!(
+  name: "黄緑系",
+  color_code: "#9EC63F"
+)
+
+Color.create!(
+  name: "緑系",
+  color_code: "#4FA46A"
+)
+
+Color.create!(
+  name: "青系",
+  color_code: "#4A86C5"
+)
+
+Color.create!(
+  name: "紫系",
+  color_code: "#7A63B8"
+)
+
+Color.create!(
+  name: "白系",
+  color_code: "#F5F5F5"
+)
+
+Color.create!(
+  name: "黒系",
+  color_code: "#2E2E2E"
+)
+
+Color.create!(
+  name: "グレー系",
+  color_code: "#9E9E9E"
+)
+
+Color.create!(
+  name: "ベージュ系",
+  color_code: "#D2B48C"
+)
+
+Color.create!(
+  name: "ブラウン系",
+  color_code: "#9A6238"
+)
+
+Color.create!(
+  name: "ネイビー系",
+  color_code: "#3F5F8C"
+)
+
+Color.create!(
+  name: "グレージュ系",
+  color_code: "#B8A88C"
+)
+Color.create!(
+  name: "くすみピンク系",
+  color_code: "#C97A95"
+)
+
+p "seed done"
