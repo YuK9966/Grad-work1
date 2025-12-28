@@ -30,11 +30,13 @@ Rails.application.routes.draw do
     get :products_search, on: :collection
     get :prod_colors_search, on: :collection
     collection do
-      get :nail_stocks # nail_items/nail_stocksへのルーティング(nail_itemsのディレクトリからnail_stocksのアクションを加えることができる)
+      get :nail_stocks
+      # nail_items/nail_stocksへのルーティング(nail_itemsのディレクトリからnail_stocksのアクションを加えることができる。トグル用)
     end
   end
   resources :nail_stocks, only: [ :create, :destroy ] # nail_stocksのcreate,destroyアクションのみルーティング
   resources :colors, only: [ :index ]
+  resource :mypage, only: [ :show, :edit, :update ]
 
   # Defines the root path route ("/")
   # root "posts#index"

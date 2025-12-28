@@ -9,7 +9,7 @@ ja:
       nail_stocks: "Your Nail Stock"
       log_nail: "使用"
     attributes:
-      nail_item:
+      nail_items:
         brand_id: "ブランドまたはメーカー名"
         product_id: "商品名"
         prod_color_id: "色番号または色名"
@@ -22,14 +22,13 @@ ja:
         name: "色番号または色名"
       naillog:
         title: "タイトル"
-        nail_item: "アイテム"
       nail_stock:
         nail_item: "アイテム"
         brand: "ブランドまたはメーカー名"
         product: "商品名"
         prod_color: "色番号または色名"
-      log_nail:
-        nail_item: "したアイテム"
+      log_nails:
+        nail_item: "使用したアイテム"
     errors:
       models:
         log_nail:

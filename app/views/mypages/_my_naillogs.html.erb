@@ -1,0 +1,13 @@
+<h2 class="text-lg font-bold mb-3 text-center">My Nail Log 最新投稿</h2>
+
+<div class="mb-5 text-center">
+  <ul class="list-unstyled">
+    <%= render partial: "naillogs/log", collection: @naillogs %>
+  </ul>
+</div>
+
+<div class="text-center mt-3 leading-loose">
+  <button class="actions h-8 overflow-hidden rounded bg-[#90D1E0] px-4 font-bold text-white transition-all duration-300 hover:bg-[#90D1E0] hover:ring-2 hover:ring-neutral-400 hover:ring-offset-2 text-center">
+    <%= link_to "My Nail Log 一覧", naillogs_path, class: "text-white" %>
+  </button>
+</div>
