@@ -18,14 +18,14 @@ class NailItemsController < ApplicationController
     @nail_item = NailItem.new
     brand = Brand.find_or_create_by(name: nail_item_params[:brand_name])
     product = Product.find_or_create_by(
-      name: nail_item_params[:product_name],
-      brand_id: brand.id
-    )
+              name: nail_item_params[:product_name],
+              brand_id: brand.id
+            )
 
     prod_color = ProdColor.find_or_create_by(
-      name: nail_item_params[:prod_color_name],
-      product_id: product.id
-    )
+              name: nail_item_params[:prod_color_name],
+              product_id: product.id
+            )
     @nail_item.brand = brand
     @nail_item.product = product
     @nail_item.prod_color = prod_color
