@@ -1,43 +1,90 @@
-<h2><%= t('.title', resource: devise_i18n_fix_model_name_case(resource.model_name.human, i18n_key: 'registrations.edit.title')) %></h2>
+<div class="max-w-sm mx-6 mt-6 mb-10 p-6 bg-secondary rounded-lg shadow-md leading-loose">
+  <h2 class="text-xl font-bold mb-6 text-center"><%= t('devise.registrations.edit.edit_your_account') %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <!-- ユーザーネーム -->
+    <div class="field">
+      <div class="flex items-center gap-1">
+        <%= f.label :nickname, class: "inline-block"%><span class="text-red-500">*</span><br />
+      </div>
+        <%= f.text_field :nickname, autocomplete: "ユーザーネーム", class: "mb-2 px-2 border bg-white border-gray-300 rounded w-full mb-2 inline-block" %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
+    <!-- メールアドレス -->
+    <div class="field">
+      <div class="flex items-center gap-1">
+        <%= f.label :email, class: "inline-block"%><span class="text-red-500">*</span><br />
+      </div>
+        <%= f.email_field :email, autocomplete: "email", class: "mb-2 px-2 border bg-white border-gray-300 rounded w-full mb-2" %>
+    </div>
+
+
+    <!-- 性別 -->
+    <div>
+      <%= f.label :gender, "性別", class: "block" %>
+      <%= f.select :gender, ["女性", "男性", "その他"], { prompt: "選択してください" }, class: "mb-2 px-2 py-1 border bg-white border-gray-300 rounded" %>
+    </div>
+
+    <!-- 年代 -->
+    <div>
+      <%= f.label :age_group, "年代", class: "block text-xs" %>
+      <%= f.select :age_group, ["10代", "20代", "30代", "40代", "50代", "60代以上"], { prompt: "選択してください" }, class: "mb-2 px-2 py-1 border bg-white border-gray-300 rounded" %>
+    </div>
+
+    <!-- ネイルを始めた時期 -->
+    <div>
+      <%= f.label :started_nail_on, "セルフネイルを始めた時期", class: "block text-xs" %>
+      <%= f.month_field :started_nail_on, class: "mb-3 px-3 border bg-white border-gray-300 rounded w-40" %>
+    </div>
+
+
+    <!-- 現在のパスワード -->
+    <div class="field">
+      <div class="flex items-center gap-1">
+        <%= f.label :current_password, class: "inline-block"%><span class="text-red-500">*</span><br />
+      </div>
+        <div class="text-[0.6rem] mb-0">※<%= t('devise.registrations.edit.we_need_your_current_password_to_confirm_your_changes') %>
+        </div>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "mb-3 px-3 border bg-white border-gray-300 rounded w-full" %>
+    </div>
+    <br>
+    
+    <!-- 新しいパスワード -->
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div class="mb-3 px-3 border bg-white border-gray-300 rounded w-full">
+      <%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
+    <% end %>
+
+    <div class="field leading-snug">
+      <div class="flex items-center gap-1">
+        <%= f.label :password, "新しいパスワード", class: "block" %><span class="text-[0.6rem]">（<%= @minimum_password_length %>文字以上）</span>
+        </div>
+        <div class="text-[0.6rem] inline-block">※<%= t('devise.registrations.edit.leave_blank_if_you_don_t_want_to_change_it') %></div><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "mb-3 px-3 border bg-white border-gray-300 rounded w-full leading-loose" %>
+    </div>
+
+    <!-- パスワード確認用 -->
+    <div class="field">
+      <%= f.label :password_confirmation, "新しいパスワード(確認用)" %><br>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mb-3 px-3 border bg-white border-gray-300 rounded w-full"  %>
+    </div>
+
+    <div class="actions text-center mt-2">
+      <%= f.submit t('devise.registrations.edit.update'), class: "btn btn-primary px-2 w-15 mx-0 font-bold text-xs text-center" %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %>
+  <!-- ライン -->
+  <hr class="my-6 border-gray-300">
+
+  <!-- アカウント削除リンク -->
+  <div class="text-center text-[0.6rem]"">
+    <%= button_to t('devise.registrations.edit.cancel_my_account'),
+      registration_path(resource_name),
+      data: { confirm: t('devise.registrations.edit.are_you_sure'),
+      turbo_confirm: t('.are_you_sure') }, method: :delete %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t('.update') %>
-  </div>
-<% end %>
-
-<h3><%= t('.cancel_my_account') %></h3>
-
-<div><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') }, method: :delete %></div>
-
-<%= link_to t('devise.shared.links.back'), :back %>
+</div>
