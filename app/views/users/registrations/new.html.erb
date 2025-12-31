@@ -49,7 +49,7 @@
   <!-- 年代 -->
   <div>
     <%= f.label :age_group, "年代", class: "block text-xs" %>
-    <%= f.select :age_group, ["10代", "20代", "30代", "40代", "50代", "60代以上"], { prompt: "選択してください" }, class: "mb-3 p-1 border bg-white border-gray-300 rounded" %>
+    <%= f.select :age_group, [["10代", "10"], ["20代", "20"], ["30代", "30"], ["40代", "40"], ["50代", "50"], ["60代以上", "60"]], { prompt: "選択してください" }, class: "mb-3 p-1 border bg-white border-gray-300 rounded" %>
   </div>
 
   <div class="text-center mt-3 leading-loose">

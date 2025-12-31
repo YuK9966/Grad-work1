@@ -9,7 +9,7 @@
       <div class="flex items-center gap-1">
         <%= f.label :nickname, class: "inline-block"%><span class="text-red-500">*</span><br />
       </div>
-        <%= f.text_field :nickname, autocomplete: "ユーザーネーム", class: "mb-2 px-2 border bg-white border-gray-300 rounded w-full mb-2 inline-block" %>
+        <%= f.text_field :nickname, autocomplete: "ユーザーネーム", class: "mb-2 px-2 border bg-white border-gray-300 rounded w-full inline-block" %>
     </div>
 
     <!-- メールアドレス -->
@@ -17,9 +17,8 @@
       <div class="flex items-center gap-1">
         <%= f.label :email, class: "inline-block"%><span class="text-red-500">*</span><br />
       </div>
-        <%= f.email_field :email, autocomplete: "email", class: "mb-2 px-2 border bg-white border-gray-300 rounded w-full mb-2" %>
+        <%= f.email_field :email, autocomplete: "email", class: "mb-2 px-2 border bg-white border-gray-300 rounded w-full" %>
     </div>
-
 
     <!-- 性別 -->
     <div>
@@ -30,13 +29,22 @@
     <!-- 年代 -->
     <div>
       <%= f.label :age_group, "年代", class: "block text-xs" %>
-      <%= f.select :age_group, ["10代", "20代", "30代", "40代", "50代", "60代以上"], { prompt: "選択してください" }, class: "mb-2 px-2 py-1 border bg-white border-gray-300 rounded" %>
+      <%= f.select :age_group, [["10代", "10"], ["20代", "20"], ["30代", "30"], ["40代", "40"], ["50代", "50"], ["60代以上", "60"]], { prompt: "選択してください" }, class: "mb-2 px-2 py-1 border bg-white border-gray-300 rounded" %>
     </div>
 
     <!-- ネイルを始めた時期 -->
     <div>
       <%= f.label :started_nail_on, "セルフネイルを始めた時期", class: "block text-xs" %>
-      <%= f.month_field :started_nail_on, class: "mb-3 px-3 border bg-white border-gray-300 rounded w-40" %>
+      <div class="flex gap-2 mb-3">
+        <%= text_field_tag :started_nail_year,
+              resource.started_nail_on&.year,
+              class: "w-20 px-2 border bg-white border-gray-300 rounded" %>
+        <span>年</span>
+        <%= text_field_tag :started_nail_month,
+              resource.started_nail_on&.month,
+              class: "w-16 px-2 border bg-white border-gray-300 rounded" %>
+        <span>月</span>
+      </div>
     </div>
 
 
