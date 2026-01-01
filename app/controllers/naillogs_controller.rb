@@ -24,7 +24,7 @@ class NaillogsController < ApplicationController
       end
     else
       load_nail_items
-      render :index, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -73,7 +73,7 @@ class NaillogsController < ApplicationController
   end
 
   def naillog_params
-    params.require(:naillog).permit(:title, :body, :nailed_date, :design_url, :status, :nail_shape, :main_image,
+    params.require(:naillog).permit(:title, :body, :nailed_date, :design_url, :status, :nail_shape, :main_image, :picture_cache,
                                   log_nails_attributes: [ :id, :nail_item_id, :_destroy ])
   end
 end

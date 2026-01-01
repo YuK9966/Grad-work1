@@ -29,6 +29,12 @@
                   <li><%= link_to "投稿一覧", naillogs_path, class: "hover:opacity-80" %></li>
                 </ul>
               </li>
+              <li>
+                <button>Nail Items</button>
+                <ul class="px-4">
+                  <li><%= link_to "アイテム登録", new_nail_item_path, class: "hover:opacity-80" %></li>
+                  <li><%= link_to "アイテム一覧", nail_items_path, class: "hover:opacity-80" %></li>
+                </ul>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "hover:opacity-80" %></li>
             </ul>
       </div>
