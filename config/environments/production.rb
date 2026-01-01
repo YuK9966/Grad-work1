@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts << "yubisaki-notes.com"      # 独自ドメイン 
+  config.hosts << "www.yubisaki-notes.com"  # サブドメイン
   # Settings specified here will take precedence over those in config/application.rb.
   config.active_storage.service = :cloudinary
 
