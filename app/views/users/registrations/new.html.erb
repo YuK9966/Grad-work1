@@ -1,4 +1,4 @@
-<div class="max-w-sm mx-6 mt-6 mb-10 p-6 bg-[#DFF1F6] rounded-lg shadow-md leading-loose">
+<div class="max-w-sm min-w-70 mx-6 mt-6 mb-10 p-4 bg-secondary rounded-lg shadow-md leading-loose">
   <h2 class="text-2xl font-bold mb-6 text-center"><%= t('devise.registrations.new.sign_up') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -53,7 +53,7 @@
   </div>
 
   <div class="text-center mt-3 leading-loose">
-    <button class="actions h-8 overflow-hidden rounded bg-[#90D1E0] px-4 font-bold text-white transition-all duration-300 hover:bg-[#90D1E0] hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 text-center">
+    <button class="btn btn-primary px-4 w-20 font-bold text-xs text-center">
       <%= f.submit t('devise.registrations.new.sign_up') %>
     </button>
   </div>
@@ -64,7 +64,7 @@
   <!-- ログインリンク -->
   <p class="text-center text-gray-600">
     ユーザー登録済みの方はこちらから</br>
-    <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path, class: "text-blue-500 hover:underline" %>
+    <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path, class: "text-primary hover:underline" %>
   </p>
 </div>
 <% end %>

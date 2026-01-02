@@ -1,7 +1,7 @@
-<div class="max-w-sm mx-auto mt-6 p-4 bg-[#DFF1F6] rounded-lg shadow-md leading-loose">
-    <h2 class="text-lg font-bold mb-3 text-center">Nail Item List</h2>
+<div class="max-w-sm min-w-70 mx-6 mt-6 mb-10 p-4 bg-secondary rounded-lg shadow-md leading-loose">
+    <h2 class="text-2xl font-bold mb-3 text-center">Nail Item List</h2>
 
-    <div class="mb-5 ml-6">
+    <div class="mb-5">
       <ul class="list-unstyled">
         <%= render partial: "item_sku", collection: @nail_items %>
       </ul>
@@ -9,7 +9,7 @@
 
     <% if user_signed_in? %>
       <div class="text-center mb-4 leading-loose">
-        <button class="actions h-8 overflow-hidden rounded bg-[#90D1E0] px-4 text-white transition-all duration-300 hover:bg-[#90D1E0] hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 text-center">
+        <button class="btn btn-primary px-4 font-bold text-xs text-center">
           <%= link_to "リストにないアイテムを登録する", new_nail_item_path %>
         </button>
       </div>

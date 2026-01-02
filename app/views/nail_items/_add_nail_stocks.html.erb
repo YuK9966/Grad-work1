@@ -2,13 +2,9 @@
         id: "nail-stock-button-for-nail-item-#{item_sku.id}",
         data: { turbo_method: :post } do %>
   <label class="items-center">
-    <input type="checkbox" class="sr-only peer">
-      <div class="relative w-8 h-4 rounded-full peer
-        peer-focus:ring-1 peer-focus:ring-[#90D1E0]
-        bg-white transition-all rounded-full after:absolute
-        after:bg-[#DFF1F6] after:rounded-full after:h-2.5 after:w-2.5
-        after:top-0.75 after:start-[1px] after:transition-all
-        after:checked:bg-white
-        peer-checked:after:translate-x-5 peer-checked:bg-primary"></div>
+    <input
+      type="checkbox"
+      class="toggle toggle-sm border-primary bg-white text-secondary checked:border-primary checked:bg-primary checked:text-white h-3 w-5"
+    />
   </label>
 <% end %>
