@@ -68,3 +68,5 @@ gem "heroicon"
 gem "carrierwave", "~> 2.2"
 gem "mimemagic", "~> 0.3.5"
 gem "cloudinary"
+gem 'kaminari', '1.2.2'
+gem 'bootstrap5-kaminari-views'
