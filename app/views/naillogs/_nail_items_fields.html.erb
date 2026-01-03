@@ -7,7 +7,7 @@
           f.object.nail_item_id
         ),
         { include_blank: "--" },
-        class: "select w-50 text-[0.6rem] leading-[0.85rem]" %>
+        class: "select w-full text-[0.6rem] leading-[0.85rem]" %>
 
   <% if f.object.persisted? %>
     <%= f.check_box :_destroy %>

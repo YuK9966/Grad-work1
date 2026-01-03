@@ -30,13 +30,13 @@ export default class extends Controller {
     return `
       <div class="log-nail-item flex gap-2 mb-1" data-log-nails-target="row">
         <select name="naillog[log_nails_attributes][${index}][nail_item_id]",
-                 class="select w-50 text-[0.6rem]">
+                 class="select w-full text-[0.6rem]">
           <option value="">--</option>
           ${options}
         </select>
         <button type="button"
                 data-action="log-nails#remove"
-                class="btn btn-outline text-xs text-nomal">
+                class="btn btn-outline text-[0.6rem]">
           取消
         </button>
       </div>
