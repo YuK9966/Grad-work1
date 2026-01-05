@@ -37,3 +37,10 @@ ja:
               required: "を選択するか、不要な行を削除してください"
   defaults:
     delete_confirm: "削除してよろしいですか？"
+  views:
+    pagination:
+    first: "&laquo;"
+    last: "&raquo;"
+    previous: "&lsaquo;"
+    next: "&rsaquo;"
+    truncate: "&hellip;"

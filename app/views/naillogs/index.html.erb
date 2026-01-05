@@ -6,4 +6,9 @@
             <%= render partial: "log", collection: @naillogs %>
           </ul>
     </div>
+
+    <!-- Pagination -->
+    <div class="text-center flex self-center join justify-center">
+      <%= paginate @naillogs %>
+    </div>
 </div>

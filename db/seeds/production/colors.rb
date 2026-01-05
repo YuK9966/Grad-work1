@@ -1,4 +1,3 @@
-
 # 色データ生成
 p "create Colors"
 Color.find_or_create_by!(
