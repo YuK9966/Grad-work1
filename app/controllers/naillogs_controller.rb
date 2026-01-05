@@ -4,7 +4,7 @@ class NaillogsController < ApplicationController
   before_action :load_nail_items, only: %i[new create edit update]
 
   def index
-    @naillogs = Naillog.published.order(created_at: :desc)
+    @naillogs = Naillog.published.order(created_at: :desc).page(params[:page]).per(5).includes(:user)
   end
 
   def new
