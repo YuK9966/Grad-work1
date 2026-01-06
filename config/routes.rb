@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get "nail_stocks/index"
   get "nail_stocks/create"
   get "nail_stocks/destroy"
-  get "nail_items/new"
   devise_for :users,
     controllers: { sessions: "users/sessions", registrations: "users/registrations" },
     path_names: { sign_in: "login", sign_out: "logout", sign_up: "signup" }

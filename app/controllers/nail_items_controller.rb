@@ -31,7 +31,7 @@ class NailItemsController < ApplicationController
     @nail_item.prod_color = prod_color
 
     if @nail_item.save
-      redirect_to @nail_item, notice: "登録されました"
+      redirect_to new_nail_item_path, notice: "登録されました"
     else
       flash.now[:alert] = "登録に失敗しました"
       render :new, status: :unprocessable_entity # エラー時にステータスコード422を返す
