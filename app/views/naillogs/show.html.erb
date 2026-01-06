@@ -37,7 +37,7 @@
   <!-- 画像側要素 -->
     <figure class="items-center place-items-center mb-4 px-1">
       <% if @naillog.main_image.present? %>
-        <%= image_tag @naillog.main_image.url, class: "w-80 h-80" %>
+        <%= image_tag @naillog.main_image.url, class: "w-80 h-80 object-cover" %>
       <% else %>
         <!-- 画像がない場合の仮表示 -->
         <div class="w-70 h-70 bg-gray-100 flex items-center justify-center text-gray-400 text-base">
