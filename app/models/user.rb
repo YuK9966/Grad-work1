@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def nail_stocked?(nail_item)
     item_stocks.include?(nail_item)
   end
+
+  def formatted_started_nail_on
+    started_nail_on&.strftime("%Y年%m月")
+  end
 end
