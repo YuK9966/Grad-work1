@@ -1,9 +1,13 @@
 <h2 class="text-lg font-bold mb-3 text-center">My Nail Log 最新投稿</h2>
 
 <div class="mb-5 text-center">
+  <% if @naillogs.empty? %>
+    <p class="text-center text-xs text-gray-600">まだ投稿がありません</p>
+  <% else %>
   <ul class="list-unstyled">
     <%= render partial: "naillogs/log", collection: @naillogs %>
   </ul>
+  <% end %>
 </div>
 
 <!-- 
