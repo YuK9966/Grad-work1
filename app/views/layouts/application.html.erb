@@ -23,10 +23,12 @@
     <%= render "shared/header" %>
 
     <!-- メインコンテンツ -->
-    <main class="flex-grow pt-14 text-xs place-items-center <%= content_for?(:main_bg_class) ? yield(:main_bg_class) : 'bg-white' %>">
+    <main class="flex flex-col items-center flex-grow pt-14 text-xs <%= content_for?(:main_bg_class) ? yield(:main_bg_class) : 'bg-white' %>">
       <!-- フラッシュメッセージ -->
+      <div class="w-full">
         <%= render "layouts/flash" %>
-      <div class="flex-1 mb-10 overflow-auto justify-center text-gray-600 px-1 sm:px-6 lg:px-0">
+      </div>
+      <div class="w-full max-w-4xl mb-10 overflow-auto text-gray-600 p-6 sm:px-6 lg:px-0">
         <%= yield %>
       </div>
     </main>
