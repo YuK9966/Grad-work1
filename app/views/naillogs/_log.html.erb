@@ -2,13 +2,14 @@
 
 <!-- テキスト側要素 -->
   <div class="flex-auto mr-2 ml-2">
+  
     <!-- タイトル -->
       <h2 class="text-sm text-primary font-semibold text-gray-800 mb-1 text-left">
         <%= link_to log.title, naillog_path(log) %>
 
         <!-- 下書きバッジ -->
         <% if log.draft? %>
-          <span class="badge badge-outline badge-primary text-[0.6rem] w-14 ml-4 px-3">下書き</span>
+          <span class="badge badge-outline badge-primary text-[0.6rem] ml-1 px-2">下書き</span>
         <% end %>
       </h2>
 
