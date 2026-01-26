@@ -29,7 +29,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -39,7 +39,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -49,7 +49,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -59,7 +59,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -69,7 +69,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -79,7 +79,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -89,7 +89,7 @@ naillogs7 = Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: user2.id,
-  status: 'published',
+  status: 1,
   nail_shape: 'オーバル'
 )
 
@@ -99,7 +99,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: user2.id,
-  status: 'draft',
+  status: 0,
   nail_shape: 'オーバル'
 )
 
@@ -109,7 +109,7 @@ Naillog.create!(
   nailed_date: Date.today,
   design_url: 'https://example.com/design1',
   user_id: User.first.id,
-  status: 'draft',
+  status: 0,
   nail_shape: 'オーバル'
 )
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_12_25_045211) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_26_162942) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -89,9 +89,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_12_25_045211) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "下書き", null: false
     t.string "nail_shape"
     t.string "main_image"
+    t.string "status_str", default: "下書き", null: false
+    t.integer "status", default: 0, null: false
     t.index ["main_image"], name: "index_naillogs_on_main_image", unique: true
     t.index ["user_id"], name: "index_naillogs_on_user_id"
   end

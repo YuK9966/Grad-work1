@@ -1,6 +1,7 @@
 class Naillog < ApplicationRecord
   attr_accessor :brand_id, :product_id, :prod_color_id
   scope :published, -> { where(status: "published") }
+  enum status: { draft: 0, published: 1 }
 
   validates :title, presence: true
   validates :status, presence: true
