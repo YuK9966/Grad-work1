@@ -15,7 +15,7 @@ class NaillogsController < ApplicationController
   def create
     @naillog = current_user.naillogs.new(naillog_params)
     # formのボタンでstatusを設定
-    @naillog.status = (params[:commit] == "下書き") ? "draft" : "published"
+    @naillog.status = (params[:commit] == "下書き保存") ? "draft" : "published"
     if @naillog.save
       if @naillog.status == "draft"
         redirect_to edit_naillog_path(@naillog), notice: "下書き保存しました"
@@ -44,8 +44,14 @@ class NaillogsController < ApplicationController
 
   def update
     @naillog = current_user.naillogs.find(params[:id])
+    @naillog.status = (params[:commit] == "下書き保存") ? "draft" : "published"
     if @naillog.update(naillog_params)
-      redirect_to @naillog, notice: "更新しました"
+    # formのボタンでstatusを設定
+      if @naillog.status == "draft"
+        redirect_to edit_naillog_path(@naillog), notice: "下書き保存しました"
+      else
+        redirect_to @naillog, notice: "更新しました"
+      end
     else
       load_nail_items
       render :edit, status: :unprocessable_entity

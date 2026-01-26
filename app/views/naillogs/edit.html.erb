@@ -1,5 +1,14 @@
 <div class="container mx-auto mt-6 mb-10 p-6 max-w-sm min-w-70 rounded-lg shadow-md leading-loose bg-base-300">
-  <h2 class="text-2xl font-bold mb-4 text-center">Edit Nail Log</h2>
+  <h2 class="text-2xl font-bold text-center">Edit Nail Log</h2>
+
+    <!-- 下書きバッジ -->
+    <% if @naillog.draft? %>
+    <div class="text-center mb-3">  
+      <div class="badge badge-soft line-primary bg-white font-bold text-primary text-xs py-3">
+        下書き
+      </div>
+    </div>
+    <% end %>
 
     <% if @naillog.errors.present? %>
       <ul class="ml-4 mb-2">
@@ -15,10 +24,14 @@
       
           <div class="text-center mt-3 leading-loose flex justify-center gap-4">
             <!-- 下書き保存ボタン -->
-            <%= f.submit "下書き保存", name: "commit", class: "btn px-4 w-25 font-bold text-primary text-xs transition-all duration-300 text-center" %>
+            <%= f.submit "下書き保存", name: "commit", value: "下書き保存", class: "btn w-25 font-bold text-primary text-xs transition-all duration-300 text-center" %>
             <!-- 投稿ボタン -->
-            <%= f.submit "上書き投稿", class: "btn btn-primary px-4 w-25 font-bold text-xs text-center" %>
+            <%= f.submit "上書き公開", class: "btn btn-primary w-25 font-bold text-xs text-center" %>
           </div>
     <% end %>
+  </div>
+
+  <div class="text-center mt-1">
+    <%= link_to "編集せず投稿に戻る", naillog_path(@naillog), class: "text-xs text-gray-600 underline" %>
   </div>
 </div>
