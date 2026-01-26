@@ -15,8 +15,5 @@ class Naillog < ApplicationRecord
   has_many :log_images, dependent: :destroy
   accepts_nested_attributes_for :log_images, allow_destroy: true
   mount_uploader :main_image, MainImageUploader
-
-  def draft?
-    status == "draft"
-  end
+  
 end

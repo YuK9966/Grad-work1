@@ -24,9 +24,9 @@
       
           <div class="text-center mt-3 leading-loose flex justify-center gap-4">
             <!-- 下書き保存ボタン -->
-            <%= f.submit "下書き保存", name: "commit", value: "下書き保存", class: "btn w-25 font-bold text-primary text-xs transition-all duration-300 text-center" %>
+            <%= button_tag "下書き保存", name: "naillog[status]", value: "draft", class: "btn w-24 font-bold text-primary text-xs text-center" %>
             <!-- 投稿ボタン -->
-            <%= f.submit "上書き公開", class: "btn btn-primary w-25 font-bold text-xs text-center" %>
+            <%= button_tag "上書き公開", name: "naillog[status]", value: "published", class: "btn btn-primary w-24 font-bold text-xs text-center" %>
           </div>
     <% end %>
   </div>
