@@ -1,6 +1,7 @@
 class Naillog < ApplicationRecord
   attr_accessor :brand_id, :product_id, :prod_color_id
   scope :published, -> { where(status: "published") }
+  enum status: { draft: 0, published: 1 }
 
   validates :title, presence: true
   validates :status, presence: true
@@ -14,8 +15,5 @@ class Naillog < ApplicationRecord
   has_many :log_images, dependent: :destroy
   accepts_nested_attributes_for :log_images, allow_destroy: true
   mount_uploader :main_image, MainImageUploader
-
-  def draft?
-    status == "draft"
-  end
+  
 end

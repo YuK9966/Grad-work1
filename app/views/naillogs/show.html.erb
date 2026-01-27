@@ -3,7 +3,7 @@
 
     <!-- 下書きバッジ -->
     <% if @naillog.draft? %>
-      <span class="badge badge-outline badge-primary text-[0.6rem] ml-4 px-3">下書き</span>
+      <span class="badge badge-outline badge-primary text-[0.6rem] mb-1 ml-4 px-3">下書き</span>
     <% end %>
 
   <!-- タイトル等 -->
@@ -60,11 +60,11 @@
 
     <!-- 使用アイテム -->
     <% if !@use_items.empty? %>
-        <div class="items-left text-left mb-3">
-          <b>使用アイテム</b>
-        </div>
+      <div class="items-left text-left mb-1">
+        <b>使用アイテム</b>
+      </div>
 
-      <div class="mb-2 px-6">
+      <div class="mb-2">
         <ul class="list-unstyled">
           <%= render partial: "naillogs/use_items", collection: @use_items %>
         </ul>
