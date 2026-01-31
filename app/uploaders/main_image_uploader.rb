@@ -30,6 +30,7 @@ class MainImageUploader < CarrierWave::Uploader::Base
   # end
 
   process convert: "webp"
+  process resize_to_limit: [1080, 1080]
 
   # Create different versions of your uploaded files:
   # version :thumb do
