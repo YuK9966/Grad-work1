@@ -1,5 +1,7 @@
 class MigrateStatusStrToStatusInt < ActiveRecord::Migration[7.2]
   def up
+    return unless column_exists?(:naillogs, :status, :integer)
+    return unless column_exists?(:naillogs, :status_str)
     execute <<~SQL
       UPDATE naillogs
       SET status = CASE status_str
