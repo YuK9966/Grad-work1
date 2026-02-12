@@ -95,11 +95,11 @@
 - 投稿をInstagramなどにそのまま転用する機能（コピペ用テキスト作成など）
 
 ## 使用する技術スタック
-- デプロイ先：Render
-- データベース：Neon（PostgreSQL 16）
+- インフラ/デプロイ：Render
+- データベース：PostgreSQL（Neon）
 - サーバーサイド：Ruby on Rails 7
-- フロントエンド：ERB + JavaScript
-- UIツール：Tailwind
+- フロントエンド：ERB / JavaScript
+- CSS：Tailwind（daisyUI）
 - 外部ストレージ：Cloudinary
 
 ### 画面遷移図
