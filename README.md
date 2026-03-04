@@ -1,4 +1,4 @@
-![ゆびさきnotesロゴ](app/assets/images/applogo_fix.png)
+<img src="app/assets/images/applogo_fix.png" width="50%">
 # ”セルフネイルを、もっと楽しく、気軽に。” ゆびさきnotes
 
 ## サービス概要
@@ -47,22 +47,22 @@
 ## 機能一覧（2026/02時点）
 | ネイル記録機能<br>（画像は編集画面） | ネイル記録閲覧機能 |
 | ---- | ---- |
-| ![Naillog edit](app/assets/images/readme/img_naillog_edit.png) | ![Naillog show](app/assets/images/readme/img_naillog_show.png)|
+| <img src="app/assets/images/readme/img_naillog_edit.png" width="80%"> | <img src="app/assets/images/readme/img_naillog_show.png" width="80%">|
 | ネイルに特化した記録機能。<br>画像投稿のみならず、爪の形や使用アイテムの登録が可能。<br>画像は自動でwebpに変換、1080×1080にトリミングされる。 | 将来的には爪の形状、使用アイテムで投稿を検索できるような機能を追加予定。 |
 
-| アイテム登録機能 |  |
+| アイテム登録機能 | アイテムリスト |
 | ---- | ---- |
-| ![nailitems_new](app/assets/images/readme/img_nailitems_new.png) | ![nailitems_list](app/assets/images/readme/img_nailitems_list.png) |
+|<img src="app/assets/images/readme/img_nailitems_new.png" width="50%"> | <img src="app/assets/images/readme/img_nailitems_list.png" width="80%"> |
 | 登録済みのアイテム名はオートコンプリートで表示させ、入力の手間を削減。 | トグルボタンで所持/非所持の切り替えが可能。 |
 
-| マイページ機能 |  |
-| ---- | ---- |
-| ![mypage](app/assets/images/readme/img_mypage.png) | ![mypage naillog](app/assets/images/readme/img_naillog_list.png) |
-| マイページではユーザー情報の変更、所持アイテムの一覧、投稿済み・下書きのNail Logの一覧を表示する（Nail Logの一覧は右セルに表示）| 下書きの場合、mypageでのみ下書きバッジ付きで表示。 |
+| マイページ機能 |
+| ---- |
+| <img src="app/assets/images/readme/img_mypage.png" width="30%"> |
+| マイページではユーザー情報の変更、所持アイテムの一覧、投稿済み・下書きのNail Logの一覧を表示する（Nail Logの一覧は右セルに表示）<br>下書きの場合、mypageでのみ下書きバッジ付きで表示。 |
 
 | 明日のネイル提案機能 |  |
 | ---- | ---- |
-| ![Next Color is](app/assets/images/readme/img_nextcoloris.png) | ![pintrest](app/assets/images/readme/img_pintrest.png) |
+| <img src="app/assets/images/readme/img_nextcoloris.png"> | <img src="app/assets/images/readme/img_pintrest.png" width="80%"> |
 | 登録済みの色名やカラーコードから、ランダムに色を表示させる。 | リンククリックで、別タブでpintrestの検索結果画面に遷移<br>※遷移前にアラートあり |
 
 
