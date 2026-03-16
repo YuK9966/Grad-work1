@@ -1,4 +1,5 @@
 <img src="app/assets/images/applogo_fix.png" width="50%">
+
 # ”セルフネイルを、もっと楽しく、気軽に。” ゆびさきnotes
 
 ## サービス概要
