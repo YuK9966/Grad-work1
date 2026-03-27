@@ -65,7 +65,7 @@ end
 gem "devise", "~> 4.9"
 gem "devise-i18n"
 gem "heroicon"
-gem "carrierwave", "~> 2.2"
+gem "carrierwave", "~> 3.1"
 gem "mimemagic", "~> 0.3.5"
 gem "cloudinary"
 gem 'kaminari', '1.2.2'
